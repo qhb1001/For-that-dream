@@ -8,6 +8,11 @@
 
 Kuangbin专题一 简单搜索 Problem E dp解法   :heavy_check_mark:
 
+#### hcx
+
+Kuangbin专题一 简单搜索 Problem E dp解法   :heavy_check_mark:
+Kuangbin专题十二 基础DP DAG模型（紫书P262） :heavy_check_mark:
+
 # markdown文件格式
 
 对每一道题目，都使用一级标题
@@ -19,3 +24,4 @@ Kuangbin专题一 简单搜索 Problem E dp解法   :heavy_check_mark:
 # 源代码存放
 
 在每一个专题里面都会有对应自己的folder，把源代码存放到那里就行
+
