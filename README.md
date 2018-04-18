@@ -4,13 +4,23 @@
 
 # TodoList
 
+校赛要来咯，最近还是先搞一下有模板、提升较快的东西吧
+
 #### qhb
 
 Kuangbin专题一 简单搜索 Problem E dp解法   :heavy_check_mark:
 
+- 矩阵
+- 数论
+- 并查集
+- 最短路
+- JAVA大数
+- 线段树复习
+
 #### hcx
 
 Kuangbin专题一 简单搜索 Problem E dp解法   :heavy_check_mark:
+
 Kuangbin专题十二 基础DP DAG模型（紫书P262） :heavy_check_mark:
 
 # markdown文件格式
