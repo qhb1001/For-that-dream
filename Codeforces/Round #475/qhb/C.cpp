@@ -44,6 +44,10 @@ int main() {
 
 	
 	ll q = ((((inv(quick(k, a))) % MOD) * quick(k, b)) % MOD + MOD) % MOD;
+	if(q == 1) {
+		cout << (base * (n + 1) / k + MOD) % MOD << endl;
+		return 0;
+	}
 	sum = ((base * (quick((n + 1) / k, q) - 1 + MOD) + MOD) % MOD) * inv(q - 1) % MOD;
 	cout << (sum + MOD) % MOD << endl;
 }

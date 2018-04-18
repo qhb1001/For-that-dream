@@ -22,7 +22,7 @@ int main() {
 
 	int cnt = 0, sum = 0;
 	for(int i = 1; i <= T; ++i) {
-		sum += cnt;
+		sum += cnt * (C - B);
 		cnt += Time[i];
 	}
 
