@@ -47,21 +47,22 @@ int main(){
         }
         
         if(d==1){
-            if(Find(x)==Find(y+2*maxn)||Find(y)==Find(x+2*maxn)){
+            if(Find(x)==Find(y+maxn)||Find(x)==Find(y+2*maxn)){
                 //                cout<<i<<" "<<1<<" "<<Find(x)<<" "<<Find(y+2*maxn)<<" "<<Find(y)<<" "<<Find(x+2*maxn)<<endl;
                 ans++;continue;
             }
-            Union(x+maxn, y);
-            Union(y+maxn,x);
+            Union(x, y);
+            Union(x+maxn,y+maxn);
             Union(x+2*maxn,y+2*maxn);
         }
         else{
-            if(Find(x)==Find(y+maxn)||Find(x+maxn)==Find(y)){
+            if(Find(x)==Find(y)||Find(x)==Find(y+2*n)){
                 //                cout<<i<<" "<<2<<" "<<Find(x)<<" "<<Find(y+maxn)<<" "<<Find(y)<<" "<<Find(x+maxn)<<endl;
                 ans++;continue;
             }
-            Union(y, x+2*maxn);
-            Union(y+maxn, x+2*maxn);
+            Union(x, y+maxn);
+            Union(x+maxn, y+2*maxn);
+            Union(x+2*maxn, y);
         }
     }
     cout<<ans<<endl;
