@@ -2,6 +2,8 @@
 
 这里是qhb, hcx, wym的ACM共享笔记存放地，用来记录从现在开始的，我们的ACM历程
 
+[Figure1](https://github.com/qhb1001/For-that-dream/blob/master/Figure1.jpg)
+
 # TodoList
 
 校赛要来咯，最近还是先搞一下有模板、提升较快的东西吧
