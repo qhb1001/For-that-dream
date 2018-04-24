@@ -52,5 +52,5 @@
 
 虽然思路很清晰。。然而还是跟六个月前犯的错误一样。。整数溢出了。。
 
-[Figure1](https://github.com/qhb1001/For-that-dream/blob/master/Codeforces/Segment%20Tree%20Problem/Figure1.png)
+![Figure1](https://github.com/qhb1001/For-that-dream/blob/master/Codeforces/Segment%20Tree%20Problem/Figure1.png)
 
