@@ -1,3 +1,17 @@
+# Problem B
+
+#### qhb
+
+这一道可以用c++和java来写，然而很明显，Java的编写难度低于c++
+
+因为c++必须自己实现Miller Rabin素数判定，而且本题甚至需要把里面的long long都改为unsigned long long才可以，所以就很麻烦
+
+然后对于java中自带的Miller Rabin素数方法，可以直接调用
+
+最后甚至java比c++跑得还快。。
+
+具体的使用方法是 `BigInteger.valueOf(xx).isProbablePrime(5)`，其中的5是该算法的一个参数，表示要进行多少轮判断的意思，数字越大，成功判断的概率越高，同时使用时间也越多
+
 # Problem E
 
 #### qhb hcx
