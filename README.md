@@ -8,7 +8,7 @@
 
 校赛要来咯，最近还是先搞一下有模板、提升较快的东西吧
 
-#### qhb
+### qhb
 
 Kuangbin专题一 简单搜索 Problem E dp解法   :heavy_check_mark:
 
@@ -23,7 +23,14 @@ Kuangbin专题一 简单搜索 Problem E dp解法   :heavy_check_mark:
 
 自己复习的最大收获是种类并查集、JAVA大数的使用、zkw线段树的练习
 
-#### hcx
+#### 4.27
+
+* [nowcoder补题](https://www.nowcoder.com/acm/contest/84#question) 以及笔记
+* 第二次省赛选拔补题
+* 表达式树相关刷题
+* 并查集和线段树刷题
+
+### hcx
 
 Kuangbin专题一 简单搜索 Problem E dp解法   :heavy_check_mark:
 
