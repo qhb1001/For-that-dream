@@ -36,6 +36,13 @@ Kuangbin专题一 简单搜索 Problem E dp解法   :heavy_check_mark:
 
 Kuangbin专题十二 基础DP DAG模型（紫书P262） :heavy_check_mark:
 
+hcx开始学习图论啦！
+打算从树开始，接着连通图！！！
+
+* 第二次省赛选拔补题
+
+最重要的一件事：Sublime坏掉了，要重装啊！
+
 # markdown文件格式
 
 对每一道题目，都使用一级标题
