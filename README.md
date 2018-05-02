@@ -26,7 +26,7 @@ Kuangbin专题一 简单搜索 Problem E dp解法   :heavy_check_mark:
 #### 4.27
 
 * ~~[nowcoder补题](https://www.nowcoder.com/acm/contest/84#question) 以及笔记~~
-* 第二次省赛选拔补题    剩余三道题
+* ~~第二次省赛选拔补题    补了四道题目~~
 * ~~表达式树相关刷题~~
 * 并查集和线段树刷题    有待进一步刷题
 
