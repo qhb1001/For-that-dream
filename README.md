@@ -19,16 +19,21 @@ Kuangbin专题一 简单搜索 Problem E dp解法   :heavy_check_mark:
 - JAVA大数:heavy_check_mark:
 - 线段树复习:heavy_check_mark:
 
-因为这两天poj的关系，使得vjudge上面的题目很多不能做
+~~因为这两天poj的关系，使得vjudge上面的题目很多不能做~~
 
-自己复习的最大收获是种类并查集、JAVA大数的使用、zkw线段树的练习
+~~自己复习的最大收获是种类并查集、JAVA大数的使用、zkw线段树的练习~~
 
 #### 4.27
 
-* [nowcoder补题](https://www.nowcoder.com/acm/contest/84#question) 以及笔记
-* 第二次省赛选拔补题
-* 表达式树相关刷题
-* 并查集和线段树刷题
+* ~~[nowcoder补题](https://www.nowcoder.com/acm/contest/84#question) 以及笔记~~
+* 第二次省赛选拔补题    剩余三道题
+* ~~表达式树相关刷题~~
+* 并查集和线段树刷题    有待进一步刷题
+
+#### 5.2
+
+* 数据结构刷题 ->  小学期
+* 浙江省赛再补一道题   目前达成六题成就
 
 ### hcx
 

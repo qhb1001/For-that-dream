@@ -7,29 +7,35 @@ using namespace std;
 const int MAX = 3e5 + 5;
 int n;
 pair<double, int>a[MAX];
+void out(int l, int r) {
+	for (int i = l; i <= r; ++i)
+		cout << a[i].second << " ";
+	cout << '\n';
+}
 bool deal(double x1, double x2, bool flag) {
 	for (int i = n; i > 1; --i) {
 		if (a[i].first >= x2 / (n - i + 1)) {//如果后n - i + 1个元素可以满足较大值的需求
+			int l = 1, r = i - 1, mid;
+			while (l < r) {
+				mid = (l + r) >> 1;
+				if (a[mid].first >= x1 / (i - mid))	r = mid - 1;
+				else	l = mid + 1;
+			}
 
-			for (int j = 1; j < i; ++j) {
-				if (a[j].first >= x1 / (i - j)) {
+			mid = (l + r) >> 1;
+			for (int j = -3; j <= 3; ++j) {
+				if (mid + j >= 1 && mid + j < i
+					&& a[mid + j].first >= x1 / (i - (mid + j))) {
+					int ans = mid + j;
 					cout << "Yes\n";
 					if (!flag) {
-						cout << i - j << " " << n - i + 1 << '\n';
-						for (int k = j; k < i; ++k)
-							cout << a[k].second << " ";
-						cout << '\n';
-						for (int k = i; k <= n; ++k)
-							cout << a[k].second << " ";
-						cout << '\n';
+						cout << i - ans << " " << n - i + 1 << '\n';
+						out(ans, i - 1);
+						out(i, n);
 					} else {
-						cout << n - i + 1 << " " << i - j << '\n';
-						for (int k = i; k <= n; ++k)
-							cout << a[k].second << " ";
-						cout << '\n';
-						for (int k = j; k < i; ++k)
-							cout << a[k].second << " ";
-						cout << '\n';
+						cout << n - i + 1 << " " << i - ans << '\n';
+						out(i, n);
+						out(ans, i - 1);
 					}
 					return true;
 				}
@@ -41,10 +47,10 @@ bool deal(double x1, double x2, bool flag) {
 }
 double x1, x2;
 int main() {
+	freopen("input", "r", stdin);
+	freopen("output.b", "w", stdout);
 	ios::sync_with_stdio(false);
 	cin.tie(0);
-	freopen("input", "r", stdin);
-	freopen("output.a", "w", stdout);
 	cin >> n >> x1 >> x2;
 	for (int i = 1; i <= n; ++i)	{
 		cin >> a[i].first;
