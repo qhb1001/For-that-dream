@@ -35,6 +35,10 @@ Kuangbin专题一 简单搜索 Problem E dp解法   :heavy_check_mark:
 * 数据结构刷题 ->  小学期
 * 浙江省赛再补一道题   目前达成六题成就
 
+#### 5.3
+
+~~计蒜之道刷题   2017年第一场~~
+
 ### hcx
 
 Kuangbin专题一 简单搜索 Problem E dp解法   :heavy_check_mark:
