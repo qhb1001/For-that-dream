@@ -46,7 +46,9 @@ Kuangbin专题一 简单搜索 Problem E dp解法   :heavy_check_mark:
 Kuangbin专题十二 基础DP DAG模型（紫书P262） :heavy_check_mark:
 
 hcx开始学习图论啦！
-打算从树开始，接着连通图！！！
+打算从树开始，（最小生成树差一题啦！）
+
+接着连通图！！！
 
 * 第二次省赛选拔补题
 
@@ -56,7 +58,7 @@ hcx开始学习图论啦！
 
 * 计蒜之道刷题   2017年第一场 （貌似我没做？？？？）
 * codeforces Edu43 478 479 480
-* ​
+* 链式前向星
 
 # markdown文件格式
 
