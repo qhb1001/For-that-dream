@@ -26,6 +26,91 @@
 
 3. 使用zkw线段树，是不需要对线段树数组进行初始化的，因为所有需要使用到的值都会在build函数和读入数据的时候完成更新。
 
+4. 今天又看了下CF上面的线段树教程，发现zkw线段树是可以非常非常灵活的
+
+   之前的合并括号题目，完全可以使用zkw线段树来搞
+
+   之前是通过每一次递归地搞，针对每一个子段，返回一个结构体
+
+   但是使用zkw线段树的时候，是可以自己定义出一个combine函数，对于每一个区间中的括号进行合并的！
+
+5. zkw线段树懒惰标记学习！
+
+   首先定义一个树的高度`int h = sizeof(int) * 8 - __builtin_clz(n);`
+
+   然后再定义一个存储懒惰标记的数组`d[n]`
+
+   * 给出一个结论：当对某个区间进行修改操作之后，这个修改操作对整棵树的影响，可以通过对`l + n`, `r + n - 1`这两个边界，自底向上更新，就可以完成对整棵树的更新
+
+     所以在这里给出build函数
+
+     ```c++
+     void build(int p) {
+         while (p > 1) p >>= 1, t[p] = max(t[p<<1], t[p<<1|1]) + d[p];    
+     }
+     ```
+
+     该函数不仅可以建树，还可以更新某次修改对整棵树的影响，保持整棵树的一致性
+
+   * 现在给出`apply`函数，该函数是区间修改操作中对某一块选中区间的更新
+
+     ```c++
+     void apply(int p, int value) {
+         t[p] += value;
+         if (p < n)	d[p] += value;
+     }
+     ```
+
+   * 现在给出`modify`函数，表示对某一块区间进行修改操作
+
+     ```c++
+     void modify(int l, int r, int value) {
+         l += n; r += n;
+         int l0 = l, r0 = r - 1;
+         for (; l < r; l >>= 1, r >>= 1) {
+             if (l&1)	apply(l++, value);
+             if (r&1)	apply(--r, value);
+         }
+         build(l0);
+         build(r0);
+     }
+     ```
+
+   * 给出push函数，用于从根结点开始，对所有包含某个叶结点的区间进行更新
+
+     ```c++
+     void push(int p) {
+         for (int s = h; s > 0; --s) {
+             int i = p >> s;
+             if (d[i] != 0) {
+                 apply(i<<1, d[i]);
+                 apply(i<<1|1, d[i]);
+                 d[i] = 0;
+             }
+         }
+     }
+     ```
+
+     
+
+   * 有了上面那些函数之后，就可以进行查询了
+
+     ```c++
+     int query(int l, int r) {
+         l += n;
+         r += n;
+         push(l); push(r - 1);
+         int ans = -(1<<30);
+         for (; l < r; l >>= 1, r >>= 1) {
+             if (l&1)	ans = max(ans, t[l++]);
+             if (r&1)	ans = max(ans, t[--r]);
+         }
+         return ans;
+     }
+     ```
+
+     
+
 # Problem E
 
 #### qhb

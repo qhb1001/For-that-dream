@@ -1,3 +1,11 @@
+# 5.11 
+
+我觉得能用zkw线段树的时候，还是尽量用zkw线段树比较好
+
+因为[C - Sereja and Brackets](http://codeforces.com/contest/380/problem/C) 这一道当初我非常害怕的题目，在使用zkw线段树之后，五分钟就写了出来。。
+
+而如果使用指针线段树，至少至少也需要二十分钟，并且非常非常容易出BUG
+
 # Problem 339D
 
 很明显的树形结构
