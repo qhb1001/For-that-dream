@@ -39,6 +39,13 @@ Kuangbin专题一 简单搜索 Problem E dp解法   :heavy_check_mark:
 
 ~~计蒜之道刷题   2017年第一场~~
 
+#### 5.11
+
+* ~~Amman 2017 !~~
+* PNRC 2016补题
+* 数组线段树刷题    SPOJ GSS1 Candy线段树待学习
+* ~~魏大大发现了我们献祭的行为，干掉魏大大~~(?)
+
 ### hcx
 
 Kuangbin专题一 简单搜索 Problem E dp解法   :heavy_check_mark:
