@@ -6,7 +6,7 @@
 using namespace std;
 typedef long long ll;
 const int maxx=110;
-int f[maxx*maxx];
+int f[maxx];
 struct cells{
     double x,y,z,r;
 }node[maxx];
@@ -34,11 +34,13 @@ double kruskal(){
     Init();
     sort(p,p+m,cmp);
     double res=0;
+    int ans=0;
     for(int i=0;i<m;i++){
         int a=Find(p[i].u),b=Find(p[i].v);
         if(a!=b){
             f[b]=a;
             res+=p[i].cost;
+            ans++;
         }
     }
     return res;
@@ -66,3 +68,4 @@ int main() {
     }
     return 0;
 }
+
