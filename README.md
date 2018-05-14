@@ -10,15 +10,6 @@
 
 ### qhb
 
-Kuangbin专题一 简单搜索 Problem E dp解法   :heavy_check_mark:
-
-- 矩阵
-- 数论
-- 并查集:heavy_check_mark:
-- 最短路:heavy_check_mark:
-- JAVA大数:heavy_check_mark:
-- 线段树复习:heavy_check_mark:
-
 ~~因为这两天poj的关系，使得vjudge上面的题目很多不能做~~
 
 ~~自己复习的最大收获是种类并查集、JAVA大数的使用、zkw线段树的练习~~
@@ -45,6 +36,12 @@ Kuangbin专题一 简单搜索 Problem E dp解法   :heavy_check_mark:
 * PNRC 2016补题
 * 数组线段树刷题    SPOJ GSS1 Candy线段树待学习
 * ~~魏大大发现了我们献祭的行为，干掉魏大大~~(?)
+
+#### 5.14
+
+* snnu校赛补题
+* 计蒜之道2018 第一场 补题  -> tarjan缩点算法待学习  (似乎我的思维比较适合图论和数据结构?)
+* 一会儿要做CF Div482… 待补题
 
 ### hcx
 
