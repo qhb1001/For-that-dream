@@ -1,0 +1,3 @@
+1. In general, the arcs of G' which are not part of the spanning tree interconnect the paths in the tree. However, if the search is depth-first, each edge (v, w) not in the spanning tree connects vertex v with one of its ancestors w.
+2. The depth-first search ensures that every vertices is examined exantly once, each edge in the graph is examined exactly twice. 
+3. Trajan构建了一些弧，这些弧是在dfs过程中，当遍历某一个结点时，该结点出发的边连向了其已经遍历过的祖先(非父亲)，则将其标记为弧
