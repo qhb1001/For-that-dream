@@ -51,6 +51,10 @@
 
   想了想！还是刷紫书的dp专题吧！
 
+#### 5.21
+
+* cx提出了换行符是否可以用cin.get()解决的问题，待处理
+
 ### hcx
 
 Kuangbin专题一 简单搜索 Problem E dp解法   :heavy_check_mark:
