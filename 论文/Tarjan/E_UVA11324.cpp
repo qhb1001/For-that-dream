@@ -80,6 +80,13 @@ int deal(int now) {
 	return dp[now] = Max + size[now];
 }
 
+void print(int now) {
+	cout << now << endl;
+	for (int i = headE[now]; i; i = E[i].nex) {
+		dfs(E[i].to);
+	}
+	cout << now << endl;
+}
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(0);
