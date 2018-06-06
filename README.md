@@ -62,6 +62,10 @@
 * 刷Hungarian相关题目
 * 刷Tarjan相关题目
 
+#### 6.6
+
+* ~~沈阳区域赛 2017  3 现场 + 2 补~~
+
 ### hcx
 
 Kuangbin专题一 简单搜索 Problem E dp解法   :heavy_check_mark:
