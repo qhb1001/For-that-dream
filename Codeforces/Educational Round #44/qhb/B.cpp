@@ -10,10 +10,6 @@ void getTimes() {
 	for (int i = 0; i < col; ++i)
 		for (int j = 0; j < row; ++j)
 			times[i] += a[j][i] - '0';
-
-
-//e	for (int i = 0; i < col; ++i)	cout << times[i] << " ";
-//	cout << endl;
 }
 
 bool check() {
@@ -35,7 +31,7 @@ int main() {
 	cin.tie(0);
 	cin >> row >> col;
 	for (int i = 0; i < row; ++i)	cin >> a[i];
-	
+
 	getTimes();
 	if (check())	cout << "YES\n";
 	else	cout << "NO\n";

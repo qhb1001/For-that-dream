@@ -348,7 +348,34 @@ add(min(i, v), max(i, v), w);
 
 此题即破
 
+# Problem N
 
+题目描述：给出一棵无根树，可以选择其中某些结点作为服务器。要求对于每一个非服务器结点，必须连接一个并且仅一个服务器结点。求最少可以选择多少个服务器结点。
+
+### qhb
+
+由于一个结点必须与一个服务器结点相连，所以必须处理
+
+* 一个结点两边都是服务器结点
+* 服务器 - 非 - 非 - 服务器
+
+这两种情况
+
+设计状态为$dp[3][n]$
+
+0 - this node is a server
+
+1 - its father is a server, it is not a server 
+
+2 - both its father and it are not server
+
+---
+
+初始化条件
+
+$dp[0][idx] = 1  $    $dp[1][idx] = 0$   $dp[2][idx] = inf$ 
+
+后者如此设置是为了防止出现全空的情况
 
 # 习题部分
 
