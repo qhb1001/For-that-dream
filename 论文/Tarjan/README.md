@@ -1,3 +1,5 @@
+[TOC]
+
 # Depth-first Search
 
 1. In general, the arcs of G' which are not part of the spanning tree interconnect the paths in the tree. However, if the search is depth-first, each edge (v, w) not in the spanning tree connects vertex v with one of its ancestors w.
@@ -58,14 +60,6 @@
 
    $LOWPT(v) = min (\{ NUMBER(v) \}  \bigcup \{ LOWPT(w) | v\rightarrow w \}  \bigcup  \{ NUMBER(w)| v -\rightarrow w \})$
 
-   很明显，NUMBER数组以及LOWPT数组都需要初始化为INF
-
-   关于在什么时候使用LOWPT以及什么时候使用NUMBER的问题
-
-   当出现了一条返祖边时，由于目前我们考虑的是最小的联通分量，所以不必再从这条返祖边的尾部继续延伸，直接求其NUMBER即可
-
-   当出现了一条正常边时，这一条边也是算在目前我们关心的联通分量中的，所以应该使用其延伸出的最小祖先
-
 4. 定理5
 
    Let G be a connected undirected graph. Let P be a palm tree formed by directing the edges of G, and let T be the spanning tree of P. Suppose a, v, w are distinct vertices of G such that (a, v) $\in$ T, and suppose w is not a descendant of v in T. If LOWPT(v) >= a then a is an articulation point of P and removal of a disconnects v and w.
@@ -86,7 +80,34 @@
 
    对于这样的结点对(v, w)，很明显，一定有w首先被遍历，处于左子树中，v之后被遍历，位于右子树中，即number[v] > number[w]
 
-2. 
+
+# trajan详解
+
+
+
+1. 会使用到的数组
+
+   * scc，用来记录强连通分量的编号
+   * s[], top手动维护的栈， top表示栈顶
+   * belong[] 表示某点对应的强连通分量编号
+   * number[] 第一次发现该点的时间戳
+   * low[] 从该点以及该点的子代出发，可以到达的最早祖先
+
+2. 在dfs过程中可能遍历到哪几种边？对它们的处理分别是什么？
+
+   可能遍历到两种边
+
+   * 到达点是第一次遍历到的点，该点的特征是`number`数组中还没有对应的值
+
+     对应的处理方案是dfs该点，之后使用该点的`low`来更新当前点的low
+
+     这样的话可以保证每次圈出来的强连通分量都是尽量大的
+
+   * 到达点是当前边出发点的祖先，并且尚未归类到强连通分量中，特征是`number有值`，并且`belong`为空
+
+     对应的处理方案是使用祖先的`number`来更新当前点的`low`
+
+   关于在什么地方使用low，什么地方使用number数组进行更新，应当参照low数组的定义
 
 # 题目练习
 
@@ -123,8 +144,6 @@ void dfs(int u, int fa) {
 ---
 
 本题我使用了链式前向星来存储整个图
-
-感觉还是很方便的，只是。。在dfs的for循环里面用错了。。起始应该将i设置为head[u]
 
 ### Problem B 洛谷P3388
 

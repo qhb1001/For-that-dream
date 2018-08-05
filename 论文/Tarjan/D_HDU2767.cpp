@@ -63,7 +63,7 @@ int main() {
 		memset(in, 0, sizeof(in));
 		memset(out, 0, sizeof(out));
 		memset(belong, 0, sizeof(belong));
-		cnt = 0;
+		cnt = 0; top = 0;
 		memset(head, 0, sizeof(head));
 
 		cin >> n >> m;

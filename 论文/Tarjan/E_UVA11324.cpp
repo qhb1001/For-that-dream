@@ -8,7 +8,7 @@ struct Node {
 	int to, nex;
 }e[50005];
 int low[MAX], number[MAX], scc, belong[MAX], s[MAX], top, dp[MAX];
-int m, n, Head[MAX], size[MAX];//用来保存联通分量的大小
+int m, n, Head[MAX], size_[MAX];//用来保存联通分量的大小
 Node E[MAX];
 void init() {
 	memset(low, 0, sizeof(low));
@@ -17,7 +17,7 @@ void init() {
 	memset(head, 0, sizeof(head));
 	memset(dp, 0, sizeof(dp));
 	memset(Head, 0, sizeof(Head));
-	memset(size, 0, sizeof(size));
+	memset(size_, 0, sizeof(size_));
 	scc = cnt = 0;
 }
 void dfs(int u) {
@@ -40,7 +40,7 @@ void dfs(int u) {
 		while (true) {
 			x = s[top--];
 			belong[x] = scc;
-			size[scc]++;
+			size_[scc]++;
 			if (x == u)	break;
 		}
 	}
@@ -77,12 +77,12 @@ int deal(int now) {
 	for (int i = Head[now]; i; i = E[i].nex) {
 		Max = max(Max, deal(E[i].to));
 	}
-	return dp[now] = Max + size[now];
+	return dp[now] = Max + size_[now];
 }
 
 void print(int now) {
 	cout << now << endl;
-	for (int i = headE[now]; i; i = E[i].nex) {
+	for (int i = head[now]; i; i = E[i].nex) {
 		dfs(E[i].to);
 	}
 	cout << now << endl;
