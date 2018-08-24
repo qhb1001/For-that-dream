@@ -42,6 +42,7 @@ int binarySearch() {
     }
     return 1;
 }
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
@@ -54,10 +55,11 @@ int main() {
         return 0;
     }
 
-    if (r_sum[2] > m && r_sum[1] <= m) {
+    if (r_sum[2] + l_sum[1] > m && r_sum[1] <= m) {
         cout << n << endl;
         return 0;
     }
+
     for (int i = n; i >= 0; --i) {
         if (l_sum[i] + r_sum[i + 1] <= m)   {
             cout << n - i << endl;

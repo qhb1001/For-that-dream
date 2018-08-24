@@ -24,6 +24,7 @@ void input() {
 }
 
 int deal() {
+    if (sum <= m)   return 0;
     for (int i = 1; i <= n; ++i) {
         sum -= song[i].val;
         if (sum <= m)   return i;
