@@ -1,3 +1,5 @@
+[TOC]
+
 # 洛谷 2661
 
 题目描述：给出一个包含n($\le 2e5$)个结点，n条边的有向图。求其中的最小环大小。
@@ -52,5 +54,126 @@
 
 好题啊好题
 
+# 洛谷 1993
 
+spfa寻找图中负环 & 差分约束系统
 
+有两种方式可以寻找负环
+
+建图的方式：
+
+* $a - b \le c$   连接 b->a   cost = c
+* $a - b \ge c$   -> $b - a \le -c$ 连接 a->b  cost = -c
+
+第一种是复杂度不是很好的bfs，但是好写好理解
+
+```c++
+bool spfa(int t) {
+    queue<int>q;
+    q.push(t);
+    d[t] = 0; vis[t] = true;
+    int u, v;
+    while (!q.empty()) {
+        u = q.front(); q.pop(); vis[u] = false;
+        for (int i = head[u]; i; i = e[i].nex) {
+            v = e[i].to;
+            if (d[v] > d[u] + e[i].cost) {
+                d[v] = d[u] + e[i].cost;
+                if (!vis[v]) {
+                    ++in[v]; vis[v] = true; q.push(v);
+                    if (in[v] == n + 1) return false;
+                }
+            }
+        }
+    }
+    return true;
+}
+int main() {
+    input();
+    for (int i = 1; i <= n; ++i) d[i] = 1<<30;
+    for (int i = 1; i <= n; ++i) if (d[i] == (1<<30)) {
+        if (!spfa(i))   {printf("No\n"); return 0;}
+    }
+    printf("Yes\n");
+    return 0;
+}
+```
+
+第二种是复杂度比较好的dfs
+
+```c++
+bool spfa(int u) {
+    vis[u] = 1;
+    int v;
+    for (int i = head[u]; i; i = e[i].nex) {
+        v = e[i].to;
+        if (d[v] > d[u] + e[i].cost) {
+            if (vis[v]) return false;
+            d[v] = d[u] + e[i].cost;
+            if (!spfa(v))    return false;
+        }
+    }
+    vis[u] = 0;
+    return true;
+}
+int main() {
+    input();
+    for (int i = 1; i <= n; ++i) {
+        d[i] = 0;
+        if (!spfa(i))   return 0 * printf("No\n");
+    }
+    printf("Yes\n");
+}
+```
+
+# cf 20C
+
+裸的最短路
+
+但是没办法用dijkstra，只能用spfa
+
+真是一个神奇的算法
+
+# cf 330B
+
+水题构造
+
+# cf 437C
+
+神奇的贪心
+
+想了一晚上想到了二分图，因为感觉的点的分配有一些类似的感觉
+
+虽然接近了，但是仍然不对
+
+实际上的等效是  删除一个点，需要的花费是与其相连的点的权值之和  <=>  考虑任意一条边，删除它可以得到的尽量优的答案是花费尽量小的那个点
+
+所以可以从大到小删除结点！这样可以保证每一条边取的花费都是尽量小的那个！！
+
+# cf 427C
+
+裸的trajan求强连通分量
+
+# cf 977E
+
+求多个联通分量中，有多少个纯圆环
+
+并查集 之后判断同一个集合中每个节点是否都是2度结点
+
+# cf 295B
+
+Floyd变形
+
+这一次我来看Floyd算法，有了一个更加清醒的认识
+
+最外层的循环表示使用了哪些点来组成最短路，若还没有循环到，那么表示还没有使用这个点
+
+所以按照给定加点循序来询问图中任意两点的最短路问题，就可以来规定最外层循环的顺序来做
+
+# cf 103B
+
+一道简单的图论判断题目
+
+本来打算用trajan + 简单环的判断条件来做
+
+但是题解里面通过树的性质给出了更漂亮的一个解法 -- 1. 联通 2. n = m 即可保证存在一个环，其余都是树

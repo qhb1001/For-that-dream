@@ -1,0 +1,21 @@
+{
+    "editor.fontSize": 16,
+    "python.pythonPath": "/usr/local/bin/python3.5",
+    "python.linting.pylintEnabled": false,
+    "files.associations": {
+        "__bit_reference": "cpp",
+        "__string": "cpp",
+        "__tree": "cpp",
+        "algorithm": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "cstdio": "cpp",
+        "type_traits": "cpp",
+        "queue": "cpp",
+        "stack": "cpp"
+    }
+}
